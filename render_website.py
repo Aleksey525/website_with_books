@@ -1,7 +1,8 @@
 import json
 import os
-from livereload import Server
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from livereload import Server
 from more_itertools import chunked
 
 
@@ -24,6 +25,7 @@ def rebuild():
         book_json = file.read()
     books = json.loads(book_json)
     on_reload(books)
+    print(type(books))
     print("Site rebuilt")
     return books
 
