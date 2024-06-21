@@ -19,7 +19,7 @@ pip install -r requirements.txt
 Чтобы начать пользлваться локальной версией сайта, нужно скачать файлы репозитория на свой компьютер. Затем перейти
 в папку `pages` и открыть в браузере любой `html` файл.   
   Ссылка на опубликованный сайт - 
-[website_with_books](https://aleksey525.github.io/website_with_books/pages/1index.html)
+[website_with_books](https://aleksey525.github.io/website_with_books/pages/index1.html)
 #####
 * Запустить скрипт и развернуть сайт:  
     
