@@ -15,7 +15,7 @@ def on_reload(books):
     for page_number, books in enumerate(divide_pages):
         template = env.get_template('template.html')
         rendered_page = template.render(books=books, page_number=page_number, number_of_pages=len(divide_pages))
-        complete_path = os.path.join(folder, f'{page_number + 1}index.html')
+        complete_path = os.path.join(folder, f'index{page_number + 1}.html')
         with open(complete_path, 'w', encoding="UTF-8") as file:
             file.write(rendered_page)
 

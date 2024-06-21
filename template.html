@@ -19,21 +19,21 @@
         {% else %}
           <li class="page-item">
         {% endif %}
-            <a class="page-link" href="{{page_number}}index.html" tabindex="-1">Назад</a></li>
+            <a class="page-link" href="index{{page_number}}.html" tabindex="-1">Назад</a></li>
         {% for number in range(1, number_of_pages + 1) %}
         {% if page_number + 1 == number %}
           <li class="page-item active" aria-current="page">
         {% else %}
           <li class="page-item" aria-current="page">
         {% endif %}
-            <a class="page-link" href="{{number}}index.html">{{number}}</a></li>
+            <a class="page-link" href="index{{number}}.html">{{number}}</a></li>
         {% endfor %}
         {% if page_number == number_of_pages - 1 %}
           <li class="page-item disabled">
         {% else %}
           <li class="page-item">
         {% endif %}
-            <a class="page-link" href="{{page_number + 2}}index.html">Вперед</a></li>
+            <a class="page-link" href="index{{page_number + 2}}.html">Вперед</a></li>
         </ul>
       </nav>
     </div>
