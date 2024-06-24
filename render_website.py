@@ -6,12 +6,15 @@ from livereload import Server
 from more_itertools import chunked
 
 
+NUMBER_OF_BOOKS = 10
+
+
 def on_reload(books):
     file_loader = FileSystemLoader('.')
     env = Environment(loader=file_loader, autoescape=select_autoescape(['html', 'xml']))
     folder = 'pages/'
     os.makedirs(folder, exist_ok=True)
-    divide_pages = list(chunked(books, 10))
+    divide_pages = list(chunked(books, NUMBER_OF_BOOKS))
     for page_number, books in enumerate(divide_pages):
         template = env.get_template('template.html')
         rendered_page = template.render(books=books, page_number=page_number, number_of_pages=len(divide_pages))
