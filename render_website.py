@@ -28,7 +28,6 @@ def rebuild():
         book_json = file.read()
     books = json.loads(book_json)
     on_reload(books)
-    print("Site rebuilt")
     return books
 
 
