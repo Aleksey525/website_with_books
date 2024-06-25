@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 import urllib.parse
@@ -34,8 +35,8 @@ def encode_path(books):
         book['book_path'] = urllib.parse.quote(text_path)
 
 
-def rebuild():
-    with open('book.json', 'r', encoding='UTF-8') as file:
+def rebuild(path):
+    with open(path, 'r', encoding='UTF-8') as file:
         book_json = file.read()
     books = json.loads(book_json)
     on_reload(books)
@@ -43,9 +44,15 @@ def rebuild():
 
 
 def main():
-    rebuild()
+    parser = argparse.ArgumentParser(
+        description='Онлайн библиотека'
+    )
+    parser.add_argument('--path', default='book.json', type=str, help='Путь к кофигурационному файлу')
+    args = parser.parse_args()
+    path = args.path
+    books = rebuild(path)
     server = Server()
-    server.watch('template.html', rebuild)
+    server.watch('template.html', lambda: on_reload(books))
     server.serve(root='.', default_filename='pages/index1.html')
 
 
