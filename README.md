@@ -1,6 +1,6 @@
 # Скрипт для верстки онлайн-библиотеки
 
-Скрипт для формирования и верстки сайта с онлайн - библиотекой из книг скачанных с [tululu,org](https://tululu.org/)
+Скрипт для формирования и верстки сайта с онлайн - библиотекой из книг скачанных с [tululu.org](https://tululu.org/)
 
 ![screenshot](https://github.com/Aleksey525/static_site/blob/main/image.jpg/)
 ### Как установить
@@ -26,7 +26,6 @@ pip install -r requirements.txt
   python main.py render_website.py
   ```
   ```
-  Site rebuilt
   [I 240621 06:21:19 server:335] Serving on http://127.0.0.1:5500
   [I 240621 06:21:19 handlers:62] Start watching changes
   [I 240621 06:21:19 handlers:64] Start detecting changes
