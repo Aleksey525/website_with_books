@@ -37,8 +37,7 @@ def encode_path(books):
 
 def rebuild(path):
     with open(path, 'r', encoding='UTF-8') as file:
-        book_json = file.read()
-    books = json.loads(book_json)
+        books = json.load(file)
     on_reload(books)
     return books
 
